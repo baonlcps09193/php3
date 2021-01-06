@@ -1,0 +1,1 @@
+Đây là trang tin trong loại {{ $idLT }}, trang thứ {{ $pageNum }} 
