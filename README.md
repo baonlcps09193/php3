@@ -1,5 +1,5 @@
 
-Đổi họ tên msssv trong view/tnb
+Đổi họ tên msssv trong view/Tin/txn.blde.php
 
 Đổi họ tên mssv trong controller/sinhviencontroller
 
