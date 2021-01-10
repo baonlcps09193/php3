@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\TinController;
 $TenTL= DB::table('theloai')
             ->where("idTL",$idTL)
             ->value("TenTL");
@@ -47,9 +47,9 @@ $tinmoi = DB::table('tin')
               <div class="fs_news_left">
                 <div class="single_fs_news_left_text">
                   <div class="fs_news_left_img"> <img src="<?= $tinmoi[0]->urlHinh ?>" alt="" />
-                    <div class="br_cam br_vid_big_s"> <a class="fa fa-camera" href=""></a> </div>
+                    <div class="br_cam br_vid_big_s"> <a class="fa fa-camera" href="{{ action( [TinController::class,'chitiettin'],['id'=>$tinmoi[0]->idTin] ) }}"></a> </div>
                   </div>
-                  <h4><a href="blog-single-slider-post.html"><?=$tinmoi[0]->TieuDe;?></a></h4>
+                  <h4><a href="{{ action( [TinController::class,'chitiettin'],['id'=>$tinmoi[0]->idTin] ) }}"><?=$tinmoi[0]->TieuDe;?></a></h4>
                   <p> <i class="fa fa-clock-o"></i> <?=date('H:m',strtotime($tinmoi[0]->Ngay));?> <i class="fa fa-comment"></i> 19 </p>
                 </div>
               </div>
@@ -59,22 +59,22 @@ $tinmoi = DB::table('tin')
                 <div class="fs_news_right">
                   <div class="single_fs_news_img"> <img src="<?= $tinmoi[1]->urlHinh?>" alt="Single News" /> </div>
                   <div class="single_fs_news_right_text">
-                    <h4><a href="blog-single-slider-post.html"><?=$tinmoi[1]->TieuDe;?></a></h4>
-                    <p> <a href=""><?= $tinmoi[1]->Ten?> </a>| <i class="fa fa-clock-o"></i> <?=date('H:m',strtotime($tinmoi[1]->Ngay));?> </p>
+                    <h4><a href="{{ action( [TinController::class,'chitiettin'],['id'=>$tinmoi[1]->idTin] ) }}"><?=$tinmoi[1]->TieuDe;?></a></h4>
+                    <p> <a href="{{ action( [TinController::class,'chitiettin'],['id'=>$tinmoi[1]->idTin] ) }}"><?= $tinmoi[1]->Ten?> </a>| <i class="fa fa-clock-o"></i> <?=date('H:m',strtotime($tinmoi[1]->Ngay));?> </p>
                   </div>
                 </div>
                 <div class="fs_news_right">
                   <div class="single_fs_news_img"> <img src="<?= $tinmoi[2]->urlHinh?>" alt="Single News" /> </div>
                   <div class="single_fs_news_right_text">
-                    <h4><a href="blog-single-slider-post.html"><?=$tinmoi[2]->TieuDe;?></a></h4>
-                    <p> <a href=""><?= $tinmoi[2]->Ten?></a>| <i class="fa fa-clock-o"></i> <?=date('H:m',strtotime($tinmoi[2]->Ngay));?> </p>
+                    <h4><a href="{{ action( [TinController::class,'chitiettin'],['id'=>$tinmoi[2]->idTin] ) }}"><?=$tinmoi[2]->TieuDe;?></a></h4>
+                    <p> <a href="{{ action( [TinController::class,'chitiettin'],['id'=>$tinmoi[2]->idTin] ) }}"><?= $tinmoi[2]->Ten?></a>| <i class="fa fa-clock-o"></i> <?=date('H:m',strtotime($tinmoi[2]->Ngay));?> </p>
                   </div>
                 </div>
                 <div class="fs_news_right last_right">
                   <div class="single_fs_news_img"> <img src="<?= $tinmoi[3]->urlHinh?>" alt="Single News" /> </div>
                   <div class="single_fs_news_right_text">
-                    <h4><a href="blog-single-slider-post.html"><?=$tinmoi[3]->TieuDe;?></a></h4>
-                    <p> <a href=""><?= $tinmoi[3]->Ten?> </a>| <i class="fa fa-clock-o"></i> <?=date('H:m',strtotime($tinmoi[3]->Ngay));?> </p>
+                    <h4><a href="{{ action( [TinController::class,'chitiettin'],['id'=>$tinmoi[3]->idTin] ) }}"><?=$tinmoi[3]->TieuDe;?></a></h4>
+                    <p> <a href="{{ action( [TinController::class,'chitiettin'],['id'=>$tinmoi[3]->idTin] ) }}"><?= $tinmoi[3]->Ten?> </a>| <i class="fa fa-clock-o"></i> <?=date('H:m',strtotime($tinmoi[3]->Ngay));?> </p>
                   </div>
                 </div>
               </div>

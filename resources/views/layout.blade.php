@@ -12,7 +12,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hash | Tin tức</title>
-
+<base href="{{ asset('/') }}">
 <!-- ~~~=| Fonts files |==-->
 <link href='http://fonts.googleapis.com/css?family=Lato:400,300,700,900,700italic,400italic,300italic,100' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,400italic,500,700,700italic,900' rel='stylesheet' type='text/css'>
@@ -186,7 +186,7 @@
 <!-- ~~~=| Header END |=~~~ --> 
 
 <!-- ~~~=| Banner START |=~~~ -->
-@include('tinnoibat')
+@yield('tinnoibat')
 <!-- ~~~=| Banner END |=~~~ --> 
 
 <!-- ~~~=| Main Wrapper END |=~~~ -->
@@ -195,9 +195,7 @@
     <div class="row">
       <div class="col-md-9 col-sm-9 col-xs-12"> 
         <!-- ~~~=| Fashion area START |=~~~ -->
-        <?php $idTL =3 ?> @include ("tinmoitheotheloai")
-        <?php $idTL =7 ?> @include ("tinmoitheotheloai")
-        <?php $idTL =1 ?> @include ("tinmoitheotheloai")
+        @yield('noidungchinh')
         <!-- ~~~=| Fashion area END |=~~~ --> 
       </div>
       <div class="col-md-3 col-sm-3 col-xs-12">

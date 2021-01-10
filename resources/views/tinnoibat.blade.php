@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\TinController;
 $tinmoi = DB::table('tin')
             ->select('idTin', 'TieuDe', 'Ngay','Ten','urlHinh')
             ->orderby('Ngay','desc')
@@ -19,30 +19,35 @@ $tinmoi = DB::table('tin')
           <div class="hp_banner_box">
             <div class="hp_banner_left">
               <div class="bl_single_news"> <img src="{{ $tinmoi[0]->urlHinh }}" alt="" />
-                <div class="bl_single_text"> <a href="blog-single-slider-post.html">
-                  <h4>{{ $tinmoi[0]->TieuDe }}</h4>
-                  </a> <span><i class="fa fa-clock-o"></i> {{ date('H:m', strtotime($tinmoi[0]->Ngay)) }}</span> </div>
+                <div class="bl_single_text">
+                  <a href="{{ action( [TinController::class,'chitiettin'], ['id' => $tinmoi[0]->idTin] ) }}">
+                    <h4>{{ $tinmoi[0]->TieuDe }}</h4>
+                  </a>
+                  <span><i class="fa fa-clock-o"></i> {{ date('H:m', strtotime($tinmoi[0]->Ngay)) }}</span>
+                </div>
               </div>
               <div class="bl_single_news"> <img src="{{ $tinmoi[1]->urlHinh }}" alt="" />
-                <div class="bl_single_text"> <a href="blog-single-slider-post.html">
-                  <h4>{{ $tinmoi[1]->TieuDe }}</h4>
-                  </a> <span><i class="fa fa-clock-o"></i> {{ date('H:m', strtotime($tinmoi[1]->Ngay)) }}</span> </div>
+                <div class="bl_single_text">
+                  <a href="{{ action( [TinController::class,'chitiettin'],['id'=>$tinmoi[1]->idTin] ) }}">
+                    <h4>{{ $tinmoi[1]->TieuDe }}</h4>
+                  </a>
+                  <span><i class="fa fa-clock-o"></i> {{ date('H:m', strtotime($tinmoi[1]->Ngay)) }}</span> </div>
               </div>
               <div class="bl_single_news"> <img src="{{ $tinmoi[2]->urlHinh }}" alt="" />
-                <div class="bl_single_text"> <a href="blog-single-slider-post.html">
+                <div class="bl_single_text"> <a href="{{ action( [TinController::class,'chitiettin'],['id'=>$tinmoi[2]->idTin] ) }}">
                   <h4>{{ $tinmoi[2]->TieuDe }}</h4>
                   </a> <span><i class="fa fa-clock-o"></i> {{ date('H:m', strtotime($tinmoi[2]->Ngay)) }}</span> </div>
               </div>
             </div>
             <div class="hp_banner_right">
               <div class="br_single_news"> <img src="{{ $tinmoi[3]->urlHinh }}" alt="" />
-                <div class="br_single_text"> <span class="green_hp_span">{{ $tinmoi[3]->Ten }}</span> <a href="blog-single-slider-post.html">
+                <div class="br_single_text"> <span class="green_hp_span">{{ $tinmoi[3]->Ten }}</span> <a href="{{ action( [TinController::class,'chitiettin'],['id'=>$tinmoi[3]->idTin] ) }}">
                   <h4>{{ $tinmoi[3]->TieuDe }}</h4>
                   </a> </div>
                 <div class="br_cam"> <a href="" class="fa fa-camera"></a> </div>
               </div>
               <div class="br_single_news"> <img src="{{ $tinmoi[4]->urlHinh }}" alt="" />
-                <div class="br_single_text"> <span class="blue_hp_span">{{ $tinmoi[4]->Ten }}</span> <a href="blog-single-slider-post.html">
+                <div class="br_single_text"> <span class="blue_hp_span">{{ $tinmoi[4]->Ten }}</span> <a href="{{ action( [TinController::class,'chitiettin'],['id'=>$tinmoi[4]->idTin] ) }}">
                   <h4>{{ $tinmoi[4]->TieuDe }}</h4>
                   </a> </div>
                 <div class="br_cam"> <a href="" class="fa fa-camera"></a> </div>

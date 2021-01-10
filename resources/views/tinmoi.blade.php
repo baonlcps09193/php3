@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\TinController;
 $latest_news = DB::table('tin')
             ->select('idTin', 'TieuDe', 'Ngay', 'Ten', 'urlHinh')
             ->orderby('Ngay','desc')
@@ -16,7 +17,7 @@ $latest_news = DB::table('tin')
         <div class="fs_news_right">
             <div class="single_fs_news_img"> <img alt="Single News" src="<?= $news->urlHinh ?>"> </div>
             <div class="single_fs_news_right_text">
-                <h4><a href="blog-single-slider-post.html"><?= $news->TieuDe ?></a></h4>
+                <h4><a href="{{action([TinController::class, 'chitiettin'] ,['id'=>$news->idTin])}}"><?= $news->TieuDe ?></a></h4>
                 <p> <a href=""><?= $news->Ten ?> | </a> <i class="fa fa-clock-o"></i> <?= date('H:m', strtotime($news->Ngay)) ?> </p>
             </div>
         </div>
