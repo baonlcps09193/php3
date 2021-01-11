@@ -8,3 +8,7 @@ MAIL_PASSWORD=mk email
 MAIL_ENCRYPTION=ssl
 
 -Sửa controller guimailcontroller dòng 15 thành email của email trong file .env
+
+
+
+
