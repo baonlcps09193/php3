@@ -27,14 +27,14 @@ $cactheloai = DB::table('theloai')
                                     ->get();    
                 ?>
                 @foreach ($subcategories as $subcategory)
-                <li><a href=""><span>{{ $subcategory->Ten }}</span></a></li>
+                <li><a href="ttl/{{ $subcategory->idLT }}"><span>{{ $subcategory->Ten }}</span></a></li>
                 @endforeach
             </ul>
         </div>
         </li>
     @endforeach
         <li class="nav_lifeguide">
-            <a href="">Liên Hệ</a>
+            <a href="lienhe">Liên Hệ</a>
         </li>
     </ul>
 </nav>

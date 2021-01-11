@@ -54,21 +54,27 @@
                                 ->where('AnHien', 1)
                                 ->get();
             ?>
-            @foreach ($comments as $comment)
-            <div class="single_comment">
-                <div class="single_comment_pic">
-                    <img src="images/comment-pic1.png" alt="" />
+            @if(empty($comments))
+                <div style="text-align: center; margin: 20px 0">
+                    <strong>Chưa có bình luận</strong>
                 </div>
-                <div class="single_comment_text">
-                    <div class="sp_title">
-                        <a href=""><h4>{{ $comment->HoTen }}</h4></a>
-                        <p>{{ date('H:m', strtotime($comment->Ngay)) }}</p>
+            @else
+                @foreach ($comments as $comment)
+                <div class="single_comment">
+                    <div class="single_comment_pic">
+                        <img src="images/comment-pic1.png" alt="" />
                     </div>
-                    <p>{{ $comment->NoiDung }}</p>
-                    <a href=""><i class="fa fa-reply"></i>Reply</a>
+                    <div class="single_comment_text">
+                        <div class="sp_title">
+                            <a href=""><h4>{{ $comment->HoTen }}</h4></a>
+                            <p>{{ date('H:m', strtotime($comment->Ngay)) }}</p>
+                        </div>
+                        <p>{{ $comment->NoiDung }}</p>
+                        <a href=""><i class="fa fa-reply"></i>Reply</a>
+                    </div>
                 </div>
-            </div>
-            @endforeach
+                @endforeach
+            @endif
         </div>
         <div class="comment-form">
             <h2>leave your comments</h2>

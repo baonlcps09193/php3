@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TinController;
+use App\Http\Controllers\GuimailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,6 @@ Route::get('/', function () {
 
 Route::get('/', [TinController::class,'index']);
 Route::get('/tin/{id}', [TinController::class, 'chitiettin']);
+Route::get('ttl/{id}', [TinController::class,'tintrongloai']);
+Route::get('lienhe', [TinController::class, 'lienhe']);
+Route::post('lienhe/', [GuimailController::class,'guimaillienhe']);
